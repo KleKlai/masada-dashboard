@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('id_code');
             $table->string('invite_code');
             $table->string('organization');
-            $table->string('headquarter');
+            $table->string('headquarter')->nullable();
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
