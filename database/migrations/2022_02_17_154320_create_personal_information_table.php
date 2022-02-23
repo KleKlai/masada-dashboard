@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('id_code');
             $table->string('invite_code');
             $table->string('organization');
+            $table->string('headquarter');
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
@@ -32,6 +33,7 @@ return new class extends Migration
             $table->string('address_zip_code');
             $table->string('email');
             $table->string('contact_number');
+            $table->boolean('isYouth')->default(false);
             $table->timestamps();
         });
     }

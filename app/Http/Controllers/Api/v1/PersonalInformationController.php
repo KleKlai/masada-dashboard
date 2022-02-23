@@ -13,6 +13,7 @@ class PersonalInformationController extends Controller
         $personalInformation = PersonalInformation::create([
             'id_code'               => $request->idCode,
             'invite_code'           => $request->inviteCode,
+            'headquarter'           => $request->headquarter,
             'organization'          => $request->organization,
             'first_name'            => $request->personalInformation['firstName'],
             'middle_name'           => $request->personalInformation['middleName'],
