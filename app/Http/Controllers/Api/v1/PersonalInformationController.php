@@ -11,7 +11,7 @@ class PersonalInformationController extends Controller
     public function store(Request $request)
     {
 
-        return response('Maynard', 200);
+        return response('Maynard Test', 200);
 
         // $personalInformation = PersonalInformation::create([
         //     'id_code'               => $request->idCode,
