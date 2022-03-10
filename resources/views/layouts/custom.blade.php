@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="icon" href="https://drive.google.com/file/d/1To8nahkGHtFuykYD4VrGfHP65AGukQUl/view?usp=sharing">
+    <link rel="icon" href="{{ assets('img/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Meta -->
