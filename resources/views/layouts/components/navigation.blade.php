@@ -1,114 +1,105 @@
-<div class="az-header">
-    <div class="container">
-        <div class="az-header-left">
-            <a href="index.html" class="az-logo"><span></span> Masada</a>
-            <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
-        </div><!-- az-header-left -->
-        <div class="az-header-menu">
-            <div class="az-header-menu-header">
-            <a href="index.html" class="az-logo"><span></span> azia</a>
-            <a href="" class="close">&times;</a>
-            </div><!-- az-header-menu-header -->
-            <ul class="nav">
-            <li class="nav-item active show">
-                <a href="index.html" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link with-sub"><i class="typcn typcn-document"></i> Pages</a>
-                <nav class="az-menu-sub">
-                <a href="page-signin.html" class="nav-link">Sign In</a>
-                <a href="page-signup.html" class="nav-link">Sign Up</a>
-                </nav>
-            </li>
-            <li class="nav-item">
-                <a href="chart-chartjs.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i> Charts</a>
-            </li>
-            <li class="nav-item">
-                <a href="form-elements.html" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i> Forms</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link with-sub"><i class="typcn typcn-book"></i> Components</a>
-                <div class="az-menu-sub">
-                <div class="container">
-                    <div>
-                    <nav class="nav">
-                        <a href="elem-buttons.html" class="nav-link">Buttons</a>
-                        <a href="elem-dropdown.html" class="nav-link">Dropdown</a>
-                        <a href="elem-icons.html" class="nav-link">Icons</a>
-                        <a href="table-basic.html" class="nav-link">Table</a>
-                    </nav>
-                    </div>
-                </div><!-- container -->
-                </div>
-            </li>
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="index.html"><img src="{{ asset('assets/img/masada_logo.png') }}" alt="Masada Logo"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+        <li class="mm-active">
+            <a class="active" href="#">
+                <img src="img/menu-icon/1.svg" alt="">
+                <span>Dashboard</span>
+            </a>
+        </li>
+        {{--  <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/2.svg" alt="">
+                <span>Pages</span>
+            </a>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="resister.html">Register</a></li>
+                <li><a href="forgot_pass.html">Forgot Password</a></li>
             </ul>
-        </div><!-- az-header-menu -->
-
-        @auth
-            <div class="az-header-right">
-                <div class="dropdown az-header-notification">
-                    <a href="" class="new"><i class="typcn typcn-bell"></i></a>
-                    <div class="dropdown-menu">
-                        <div class="az-dropdown-header mg-b-20 d-sm-none">
-                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
-                        </div>
-                        <h6 class="az-notification-title">Notifications</h6>
-                        <p class="az-notification-text">You have 2 unread notification</p>
-                        <div class="az-notification-list">
-                        <div class="media new">
-                            <div class="az-img-user"><img src="../img/faces/face2.jpg" alt=""></div>
-                            <div class="media-body">
-                            <p>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</p>
-                            <span>Mar 15 12:32pm</span>
-                            </div><!-- media-body -->
-                        </div><!-- media -->
-                        <div class="media new">
-                            <div class="az-img-user online"><img src="../img/faces/face3.jpg" alt=""></div>
-                            <div class="media-body">
-                            <p><strong>Joyce Chua</strong> just created a new blog post</p>
-                            <span>Mar 13 04:16am</span>
-                            </div><!-- media-body -->
-                        </div><!-- media -->
-                        <div class="media">
-                            <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div>
-                            <div class="media-body">
-                            <p><strong>Althea Cabardo</strong> just created a new blog post</p>
-                            <span>Mar 13 02:56am</span>
-                            </div><!-- media-body -->
-                        </div><!-- media -->
-                        <div class="media">
-                            <div class="az-img-user"><img src="../img/faces/face5.jpg" alt=""></div>
-                            <div class="media-body">
-                            <p><strong>Adrian Monino</strong> added new comment on your photo</p>
-                            <span>Mar 12 10:40pm</span>
-                            </div><!-- media-body -->
-                        </div><!-- media -->
-                        </div><!-- az-notification-list -->
-                        <div class="dropdown-footer"><a href="">View All Notifications</a></div>
-                    </div><!-- dropdown-menu -->
-                </div><!-- az-header-notification -->
-                <div class="dropdown az-profile-menu">
-                    <a href="" class="az-img-user"><img src="../img/faces/face1.jpg" alt=""></a>
-                    <div class="dropdown-menu">
-                        <div class="az-dropdown-header d-sm-none">
-                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
-                        </div>
-                        <div class="az-header-profile">
-                        <div class="az-img-user">
-                            <img src="../img/faces/face1.jpg" alt="">
-                        </div><!-- az-img-user -->
-                        <h6>Aziana Pechon</h6>
-                        <span>Premium Member</span>
-                        </div><!-- az-header-profile -->
-
-                        <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
-                        <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
-                        <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
-                        <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                        <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
-                    </div><!-- dropdown-menu -->
-                </div>
-            </div><!-- az-header-right -->
-        @endauth
-    </div><!-- container -->
-</div><!-- az-header -->
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/3.svg" alt="">
+                <span>Applications</span>
+            </a>
+            <ul>
+                <li><a href="mail_box.html">Mail Box</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/4.svg" alt="">
+                <span>UI Component</span>
+            </a>
+            <ul>
+                <li><a href="#">Elements</a>
+                    <ul>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="dropdown.html">Dropdowns</a></li>
+                        <li><a href="Badges.html">Badges</a></li>
+                        <li><a href="Loading_Indicators.html">Loading Indicators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Components</a>
+                    <ul>
+                        <li><a href="notification.html">Notifications</a></li>
+                        <li><a href="progress.html">Progress Bar</a></li>
+                        <li><a href="carousel.html">Carousel</a></li>
+                        <li><a href="cards.html">cards</a></li>
+                        <li><a href="Pagination.html">Pagination</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/5.svg" alt="">
+                <span>Widgets</span>
+            </a>
+            <ul>
+                <li><a href="chart_box_1.html">Chart Boxes 1</a></li>
+                <li><a href="profilebox.html">Profile Box</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/6.svg" alt="">
+                <span>Forms</span>
+            </a>
+            <ul>
+                <li><a href="#">Elements</a>
+                    <ul>
+                        <li><a href="data_table.html">Data Tables</a></li>
+                        <li><a href="bootstrap_table.html">Grid Tables</a></li>
+                        <li><a href="datepicker.html">Date Picker</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Widgets</a>
+                    <ul>
+                        <li><a href="Input_Selects.html">Input Selects</a></li>
+                        <li><a href="Input_Mask.html">Input Mask</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src="img/menu-icon/7.svg" alt="">
+                <span>Charts</span>
+            </a>
+            <ul>
+                <li><a href="chartjs.html">ChartJS</a></li>
+                <li><a href="apex_chart.html">Apex Charts</a></li>
+                <li><a href="chart_sparkline.html">chart sparkline</a></li>
+            </ul>
+        </li>  --}}
+    </ul>
+</nav>
