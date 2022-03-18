@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('personal_information', function (Blueprint $table) {
             $table->id();
-            $table->string('id_code');
+            $table->string('id_code')->nullable();
             $table->string('invite_code');
             $table->string('organization');
             $table->string('headquarter')->nullable();
