@@ -4,11 +4,11 @@
             <div class="pcoded-navigation-label">Navigation</div>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="">
-                    <a href="sample-page.html" class="waves-effect waves-dark">
+                    <a href="#" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-watch"></i>
                         </span>
-                        <span class="pcoded-mtext">Sample Page</span>
+                        <span class="pcoded-mtext">Dashboard</span>
                     </a>
                 </li>
             </ul>
