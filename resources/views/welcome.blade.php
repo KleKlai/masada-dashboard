@@ -25,7 +25,7 @@
                                 <div class="card-block">
                                     <div class="row">
                                         <div class="col-xl-3 col-md-6">
-                                            <h6>Total Registration <span class="text-c-green">Live</span></h6>
+                                            <h6>Total Registration <span class="badge bg-c-green text-white">Live</span></h6>
                                             <h5 class="m-b-30 f-w-700">{{ $total_registration }}<span
                                                     class="text-c-green m-l-10">Masada</span></h5>
                                             {{--  <div class="progress">
@@ -34,7 +34,7 @@
                                             </div>  --}}
                                         </div>
                                         <div class="col-xl-3 col-md-6">
-                                            <h6>Total Registration <span class="text-c-green">Live</span></h6>
+                                            <h6>Total Registration <span class="badge bg-c-green text-white">Live</span></h6>
                                             <h5 class="m-b-30 f-w-700">{{ $total_registration_youth }}<span
                                                     class="text-c-green m-l-10">Youth</span></h5>
                                             {{--  <div class="progress">
@@ -51,7 +51,7 @@
                                             </div>  --}}
                                         </div>
                                         <div class="col-xl-3 col-md-6">
-                                            <h6>Total Organization <span class="text-c-green">Live</span></h6>
+                                            <h6>Total Organization <span class="badge bg-c-green text-white">Live</span></h6>
                                             <h5 class="m-b-30 f-w-700">{{ $organizations->count() }}</h5>
                                             {{--  <div class="progress">
                                                 <div class="progress-bar bg-c-yellow"

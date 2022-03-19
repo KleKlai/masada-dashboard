@@ -7,10 +7,10 @@ use App\Models\PersonalInformation as PrimaryDataSource;
 
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['verified']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['verified']);
+    // }
 
     public function index()
     {
