@@ -52,7 +52,7 @@
                                         </div>
                                         <div class="col-xl-3 col-md-6">
                                             <h6>Total Organization <span class="badge bg-c-green text-white">Live</span></h6>
-                                            <h5 class="m-b-30 f-w-700">{{ $organizations->count() }}</h5>
+                                            <h5 class="m-b-30 f-w-700">{{ $total_organizations->count() }}</h5>
                                             {{--  <div class="progress">
                                                 <div class="progress-bar bg-c-yellow"
                                                     style="width:45%"></div>
@@ -287,18 +287,12 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card social-res-card">
                                 <div class="card-header">
-                                    <h5>Rank by Organization</h5>
+                                    <h5>Rank by Organization <span class="badge bg-c-green text-white">Live</span></h5>
                                 </div>
                                 <div class="card-body">
-                                    @forelse ($organizations as $organization)
-                                        <p class="m-b-10">{{ $organization->organization }}</p>
-                                        <div class="progress m-b-30">
-                                            <div class="progress-bar bg-facebook" style="width:25%">
-                                            </div>
-                                        </div>
-                                    @empty
-                                        <p class="m-b-10">- Insufficient Data -</p>
-                                    @endforelse
+                                    @foreach ($total_organizations as $key => $total_organization)
+                                        <p class="m-b-10">{{ $total_organization->organization }}</p>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -323,15 +317,11 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card social-res-card">
                                 <div class="card-header">
-                                    <h5>Rank by Civil Status</h5>
+                                    <h5>Rank by Civil Status <span class="badge bg-c-green text-white">Live</span></h5>
                                 </div>
                                 <div class="card-body">
-                                    @forelse ($rank_by_headquarters as $rank_by_headquarter)
-                                        <p class="m-b-10">Wall Profile</p>
-                                        <div class="progress m-b-30">
-                                            <div class="progress-bar bg-twitter" style="width:85%">
-                                            </div>
-                                        </div>
+                                    @forelse ($civil_status as $civil)
+                                        <p class="m-b-10">{{ $civil->civil_status }}</p>
                                     @empty
                                         <p class="m-b-10">- Insufficient Data -</p>
                                     @endforelse
@@ -339,20 +329,29 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card social-res-card">
+                            <div class="card sale-card ">
                                 <div class="card-header">
-                                    <h5>Gender</h5>
+                                    <h5>Gender <span class="badge bg-c-green text-white">Live</span></h5>
                                 </div>
-                                <div class="card-body">
-                                    @forelse ($rank_by_headquarters as $rank_by_headquarter)
-                                        <p class="m-b-10">Wall Profile</p>
-                                        <div class="progress m-b-30">
-                                            <div class="progress-bar bg-twitter" style="width:85%">
+                                <div class="card-block text-center">
+                                    {{--  <div data-label="40%" class="radial-bar radial-bar-40 radial-bar-lg radial-bar-danger">
+                                    </div>  --}}
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="s-caption bg-c-red "></div>
+                                            <div class="s-cont d-inline-block">
+                                                <h5 class="f-w-700 m-b-0">{{ $total_female }}</h5>
+                                                <p class="m-b-0">Female</p>
                                             </div>
                                         </div>
-                                    @empty
-                                        <p class="m-b-10">- Insufficient Data -</p>
-                                    @endforelse
+                                        <div class="col-6 b-l-default">
+                                            <div class="s-caption bg-default"></div>
+                                            <div class="s-cont d-inline-block">
+                                                <h5 class="f-w-700 m-b-0">{{ $total_male }}</h5>
+                                                <p class="m-b-0">Male</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
