@@ -30,6 +30,11 @@ class PIRankCommand extends Command
      */
     public function handle()
     {
+        // Check database if empty
+        if(PrimaryDataSource::select('organization')->get()->isEmpty()){
+            return 0;
+            $this->info('Database is empty. Aborting job.');
+        }
 
         DB::transaction(function () {
 
@@ -89,6 +94,6 @@ class PIRankCommand extends Command
 
         }, 5);
 
-        return 0;
+        $this->info('PIRank successfully executed.');
     }
 }
