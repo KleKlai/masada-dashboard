@@ -6,7 +6,7 @@
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
                         <h5>Last Updated</h5>
-                        <span>{{ $organizations->first()->updated_at->format('F jS, Y g:i A')}}</span>
+                        <span>{{ $organizations->first()->updated_at->format('F jS, Y g:i A') ? '- Data Unavailable -'}}</span>
                     </div>
                 </div>
             </div>
