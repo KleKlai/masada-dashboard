@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PersonalInformation as PrimaryDataSource;
+use App\Models\PIRanking;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -18,16 +20,16 @@ class DashboardController extends Controller
         $total_registration_youth   = PrimaryDataSource::where('isYouth', 1)->count();
 
         //Organization
-        $total_organizations        = PrimaryDataSource::select('organization')->distinct('organization')->get();
-        $organizations_source       = PrimaryDataSource::select('organization')->get();
-        $organizations              = $organizations_source->countBy('organization');
+        $total_organizations        = PrimaryDataSource::distinct('organization')->count();
+        $organizations              = PIRanking::where('category', 'organization')->latest()->take($total_organizations)->get();
 
         // Gender
-        $total_male                 = PrimaryDataSource::where('gender', 'Male')->count();
-        $total_female               = PrimaryDataSource::where('gender', 'Female')->count();
+        $total_gender               = PrimaryDataSource::distinct('gender')->count();
+        $gender                     = PIRanking::where('category', 'gender')->latest()->take($total_gender)->get();
 
         // Civil Status
-        $civil_status               = PrimaryDataSource::select('civil_status')->distinct('civil_status')->get();
+        $total_civil_status         = PrimaryDataSource::distinct('civil_status')->count();
+        $civil_status               = PIRanking::where('category', 'civil_status')->latest()->take($total_civil_status)->get();
 
         $rank_by_headquarters = [];
 
@@ -37,8 +39,7 @@ class DashboardController extends Controller
             'total_organizations',
             'organizations',
             'rank_by_headquarters',
-            'total_male',
-            'total_female',
+            'gender',
             'civil_status'
         ));
     }

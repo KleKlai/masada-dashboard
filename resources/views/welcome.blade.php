@@ -5,8 +5,8 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Dashboard</h5>
-                        <span>Masada Overall Dashboard</span>
+                        <h5>Last Updated</h5>
+                        <span>{{ $organizations->first()->updated_at->format('F jS, Y g:i A')}}</span>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                                         </div>
                                         <div class="col-xl-3 col-md-6">
                                             <h6>Total Organization <span class="badge bg-c-green text-white">Live</span></h6>
-                                            <h5 class="m-b-30 f-w-700">{{ $total_organizations->count() }}</h5>
+                                            <h5 class="m-b-30 f-w-700">{{ $total_organizations }}</h5>
                                             {{--  <div class="progress">
                                                 <div class="progress-bar bg-c-yellow"
                                                     style="width:45%"></div>
@@ -290,8 +290,12 @@
                                     <h5>Rank by Organization <span class="badge bg-c-green text-white">Live</span></h5>
                                 </div>
                                 <div class="card-body">
-                                    @foreach ($total_organizations as $key => $total_organization)
-                                        <p class="m-b-10">{{ $total_organization->organization }}</p>
+                                    @foreach ($organizations as $key => $total_organization)
+                                        <p class="m-b-10">{{ $total_organization->name }}</p>
+                                        <div class="progress m-b-30">
+                                            <div class="progress-bar bg-twitter" style="width:{{ $total_organization->percentage }}%">
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -321,7 +325,11 @@
                                 </div>
                                 <div class="card-body">
                                     @forelse ($civil_status as $civil)
-                                        <p class="m-b-10">{{ $civil->civil_status }}</p>
+                                        <p class="m-b-10">{{ $civil->name }}</p>
+                                        <div class="progress m-b-30">
+                                            <div class="progress-bar bg-twitter" style="width:{{ $civil->percentage }}%">
+                                            </div>
+                                        </div>
                                     @empty
                                         <p class="m-b-10">- Insufficient Data -</p>
                                     @endforelse
@@ -340,14 +348,14 @@
                                         <div class="col-6">
                                             <div class="s-caption bg-c-red "></div>
                                             <div class="s-cont d-inline-block">
-                                                <h5 class="f-w-700 m-b-0">{{ $total_female }}</h5>
+                                                <h5 class="f-w-700 m-b-0">{{ $gender->skip(1)->first()->percentage }}%</h5>
                                                 <p class="m-b-0">Female</p>
                                             </div>
                                         </div>
                                         <div class="col-6 b-l-default">
                                             <div class="s-caption bg-default"></div>
                                             <div class="s-cont d-inline-block">
-                                                <h5 class="f-w-700 m-b-0">{{ $total_male }}</h5>
+                                                <h5 class="f-w-700 m-b-0">{{ $gender->first()->percentage }}%</h5>
                                                 <p class="m-b-0">Male</p>
                                             </div>
                                         </div>
