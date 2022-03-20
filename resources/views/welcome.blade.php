@@ -290,13 +290,15 @@
                                     <h5>Rank by Organization <span class="badge bg-c-green text-white">Live</span></h5>
                                 </div>
                                 <div class="card-body">
-                                    @foreach ($organizations as $key => $total_organization)
+                                    @forelse ($organizations as $key => $total_organization)
                                         <p class="m-b-10">{{ $total_organization->name }}</p>
                                         <div class="progress m-b-30">
                                             <div class="progress-bar bg-twitter" style="width:{{ $total_organization->percentage }}%">
                                             </div>
                                         </div>
-                                    @endforeach
+                                    @empty
+                                        <p class="m-b-10">- Insufficient Data -</p>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
