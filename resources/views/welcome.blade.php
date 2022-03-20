@@ -348,14 +348,25 @@
                                         <div class="col-6">
                                             <div class="s-caption bg-c-red "></div>
                                             <div class="s-cont d-inline-block">
-                                                <h5 class="f-w-700 m-b-0">{{ $gender->skip(1)->first()->percentage ? 0 }}%</h5>
+                                                <h5 class="f-w-700 m-b-0">
+                                                    @if(!empty($gender->skip(1)->first()->percentage))
+                                                        {{ $gender->skip(1)->first()->percentage }}%
+                                                    @else
+                                                        - Insufficient Data -
+                                                    @endif
+                                                </h5>
                                                 <p class="m-b-0">Female</p>
                                             </div>
                                         </div>
                                         <div class="col-6 b-l-default">
                                             <div class="s-caption bg-default"></div>
                                             <div class="s-cont d-inline-block">
-                                                <h5 class="f-w-700 m-b-0">{{ $gender->first()->percentage ? 0 }}%</h5>
+                                                <h5 class="f-w-700 m-b-0">
+                                                    @if(!empty($gender->first()->percentage))
+                                                        {{ $gender->first()->percentage }}%</h5>
+                                                    @else
+                                                        - Insufficient Data -
+                                                    @endif
                                                 <p class="m-b-0">Male</p>
                                             </div>
                                         </div>
