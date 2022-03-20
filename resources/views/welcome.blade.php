@@ -6,7 +6,8 @@
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
                         <h5>Last Updated</h5>
-                        <span>{{ $organizations->first()->updated_at->format('F jS, Y g:i A') ? '' }}</span>
+                        {{--  <span>{{ $organizations->first()->updated_at->format('F jS, Y g:i A') ? 'Test'}}</span>  --}}
+                        <span>{{ date('F jS, Y g:i A') }}</span>
                     </div>
                 </div>
             </div>
@@ -19,7 +20,6 @@
                 <div class="page-body">
 
                     <div class="row">
-
                         <div class="col-xl-12">
                             <div class="card proj-progress-card">
                                 <div class="card-block">
